@@ -1,1 +1,1 @@
-# My personal DWM config (ST/dmenu/dwm/dwmblocks)
+# My personal DWM config (ST / dmenu / dwm / dwmblocks)
