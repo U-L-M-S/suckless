@@ -1,0 +1,22 @@
+#!/usr/bin/bash
+
+
+while true : 
+do
+
+  bCoin="$(coinmon | grep BTC | awk '{print $6}')"
+  # 38102.6846
+  euInUSD="$(curl --silent --output -X GET https://openexchangerates.org/api/latest.json\?app_id\=6aede61dbbf64d2198a31c25dd937082 | grep EUR | grep -Eo '[0-9]+\.[0-9]{0,6}' | sed 's/,//g')"
+  # euInUSD="$(curl -X GET https://openexchangerates.org/api/latest.json\?app_id\=6aede61dbbf64d2198a31c25dd937082 | grep EUR | grep -Eo '[0-9]+\.[0-9]{0,6}' | sed 's/,//g')"
+  # 0.893167
+
+  # result=$(echo "$bCoin * $euInUSD" | bc) 
+  result=$(echo "($bCoin * $euInUSD)/1" | bc)
+  # echo $result "€" 
+  echo ${result::2}.${result:2}"€" > ~/.config/suckless/dwmbar/bitcoit_price.txt 
+
+
+  # echo "$result[3]"
+  sleep 60
+
+done

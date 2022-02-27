@@ -1,0 +1,20 @@
+#!/usr/bin/zsh
+
+while : 
+do
+
+	WLPDIR1="$HOME/MEGAsync/wallpapers/"
+	WLPDIR2="$HOME/MEGAsync/wallpapers/"
+
+	files1=($WLPDIR1*)
+	files2=($WLPDIR2*)
+
+	wlpfiles1=${files1[RANDOM % ${#files1[@]}]}
+	wlpfiles2=${files2[RANDOM % ${#files2[@]}]}
+
+
+	feh --bg-fill "$wlpfiles1" --bg-fill "$wlpfiles2"
+
+	sleep 240
+
+done  

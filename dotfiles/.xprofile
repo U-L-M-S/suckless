@@ -1,0 +1,17 @@
+xrandr --output HDMI-1 --mode 1920x1080 --output DP-1 --mode 1920x1080 --left-of HDMI-1  &
+
+xset dpms s off &
+
+/* gromit-mpx & */
+
+bash ~/.local/bin/change_bk & 
+
+conky -c ~/.config/conky/config.conkyrc &
+
+/* bash /home/silcniu/.config/suckless/dwmbar/dwmbar */
+
+/* picom --experimental-backends */
+
+exec dwm
+
+
