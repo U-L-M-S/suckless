@@ -24,11 +24,11 @@ static const unsigned int gappx     = 6;
 // static const char col_gray4[]       = "#d7d7d7"; // Title Color
 // static const char col_cyan[]        = "#4d4d4d"; // Title Background
 //
-static const char col_gray1[]       = "#1c1c1c"; // Numbers Background
+static const char col_gray1[]       = "#494949"; // Numbers Background
 static const char col_gray2[]       = "#444444"; // DK (it doesn't show up)
-static const char col_gray3[]       = "#ABB2BF"; // Letter
-static const char col_gray4[]       = "#eef4fa"; // Title Color
-static const char col_cyan[]        = "#1c1c1c"; // Title Background
+static const char col_gray3[]       = "#5500cc"; // Letter
+static const char col_gray4[]       = "#1c1c1c"; // Title Color
+static const char col_cyan[]        = "#494949"; // Title Background
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -36,7 +36,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "拾", "羽"};
+static const char *tags[] = { "", "", "", "拾", "", "羽"};
 
 static const Rule rules[] = {
 	/* xprop(1):
