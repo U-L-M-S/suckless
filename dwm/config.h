@@ -27,8 +27,8 @@ static const unsigned int gappx     = 6;
 static const char col_gray1[]       = "#1c1c1c"; // Numbers Background
 static const char col_gray2[]       = "#444444"; // DK (it doesn't show up)
 static const char col_gray3[]       = "#ABB2BF"; // Letter
-static const char col_gray4[]       = "#1c1c1c"; // Title Color
-static const char col_cyan[]        = "#9deb7b"; // Title Background
+static const char col_gray4[]       = "#eef4fa"; // Title Color
+static const char col_cyan[]        = "#1c1c1c"; // Title Background
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
