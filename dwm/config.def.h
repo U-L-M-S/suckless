@@ -26,7 +26,7 @@ static const unsigned int gappx     = 6;
 //
 static const char col_gray1[]       = "#494949"; // Numbers Background
 static const char col_gray2[]       = "#444444"; // DK (it doesn't show up)
-static const char col_gray3[]       = "#5500cc"; // Letter
+static const char col_gray3[]       = "#ffffff"; // Letter
 static const char col_gray4[]       = "#1c1c1c"; // Title Color
 static const char col_cyan[]        = "#494949"; // Title Background
 static const char *colors[][3]      = {
