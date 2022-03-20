@@ -87,6 +87,7 @@ static const char *web[] = { "brave-browser", NULL };
 
 #include <X11/XF86keysym.h>
 
+#include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key             function        argument */
 	{ MODKEY,                       XK_space,       spawn,          {.v = dmenucmd } },
@@ -101,17 +102,19 @@ static Key keys[] = {
 	{ MODKEY,                       XK_n,           togglebar,      {0} },
 	{ MODKEY,                       XK_j,           focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,           focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,           incnmaster,     {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
+  { MODKEY,                       XK_i,           incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,           incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,           setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,           setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return,      zoom,           {0} },
 	{ MODKEY,                       XK_Tab,         view,           {0} },
 	{ MODKEY,	                      XK_c,           killclient,     {0} },
-	{ MODKEY,                       XK_t,           setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,           setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,           setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_w,           setlayout,      {0} },
+	{ MODKEY,                       XK_w,           setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_e,           setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_r,           setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_t,           setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,       togglefloating, {0} },
 	{ MODKEY,                       XK_v,           view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_v,           tag,            {.ui = ~0 } },
