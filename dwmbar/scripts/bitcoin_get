@@ -13,7 +13,7 @@ do
   # result=$(echo "$bCoin * $euInUSD" | bc) 
   result=$(echo "($bCoin * $euInUSD)/1" | bc)
   # echo $result "€" 
-  echo ${result::2}.${result:2}"€" > ~/.config/suckless/dwmbar/bitcoit_price.txt 
+  echo ${result::2}.${result:2}"€" > ~/.local/bin/bitcoin_price.txt 
 
 
   # echo "$result[3]"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-bitcoin= cat ~/.config/suckless/dwmbar/bitcoit_price.txt
+bitcoin= cat ~/.local/bin/bitcoin_price.txt
 
 echo $(bitcoin) &
 
