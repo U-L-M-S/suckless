@@ -1,24 +1,14 @@
---- dwm.c	2020-07-09 16:49:10.023585649 +0200
-+++ dwm.c	2020-07-09 16:49:43.497542191 +0200
-@@ -702,7 +702,7 @@ drawbar(Monitor *m)
- 	Client *c;
+--- dwm.c
++++ dwm.c
+@@ -237,7 +239,11 @@ static int xerrorstart(Display *dpy, XErrorEvent *ee);
+ static void zoom(const Arg *arg);
  
- 	/* draw status first so it can be overdrawn by tags later */
--	if (m == selmon) { /* status is only drawn on selected monitor */
-+	if (m == selmon || 1) { /* status is only drawn on selected monitor */
- 		drw_setscheme(drw, scheme[SchemeNorm]);
- 		sw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
- 		drw_text(drw, m->ww - sw, 0, sw, bh, 0, stext, 0);
-@@ -1987,9 +1987,11 @@ updatesizehints(Client *c)
- void
- updatestatus(void)
- {
-+	Monitor* m;
- 	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext)))
- 		strcpy(stext, "dwm-"VERSION);
--	drawbar(selmon);
-+	for(m = mons; m; m = m->next)
-+		drawbar(m);
- }
- 
- void
+ /* variables */
++static const char autostartblocksh[] = "autostart_blocking.sh";
++static const char autostartsh[] = "autostart.sh";
+ static const char broken[] = "broken";
++static const char dwmdir[] = "dwm";
++static const char localshare[] = ".local/share";
+ static char stext[256];
+ static int screen;
+ static int sw, sh;           /* X display screen geometry width, height */
