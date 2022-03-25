@@ -113,7 +113,8 @@ static const char *web[] = { "brave-browser", NULL };
 #include "movestack.c"
 static Key keys[] = {
 	/* modifier                     key             function        argument */
-	{ MODKEY,                       XK_space,       spawn,          {.v = dmenucmd } },
+	// { MODKEY,                       XK_space,       spawn,          {.v = dmenucmd } },
+  { MODKEY,                       XK_space,       spawn,          SHCMD("rofi -show drun -yoffset 330") },
 	{ MODKEY,	                      XK_Return,      spawn,          {.v = termcmd } },
 
 	{ MODKEY|Mod4Mask,              XK_a,      incrgaps,       {.i = +1 } },
