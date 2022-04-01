@@ -26,20 +26,42 @@ static const char dmenufont[]       = "Hack Nerd Font:size=9";
 
 static const unsigned int gappx     = 6;
 
+
 static const char col_gray1[]       = "#282a36"; // Numbers Background
 static const char col_gray2[]       = "#644475"; // DK (it doesn't show up)
-static const char col_gray3[]       = "#f8f8f2"; // Letter
+static const char col_gray3[]       = "#bf93f9"; // Letter
 static const char col_gray4[]       = "#282a36"; // Title Color
-static const char col_gray5[]       = "#a272a4"; 
+static const char col_gray5[]       = "#282a36";
+// static const char col_gray5[]       = "#a272a4";
 static const char col_cyan[]        = "#bf93f9"; // Title Background
+static const char col_title1[]        = "#282a36";  
+static const char col_title2[]        = "#282a36";
+static const char col_title3[]        = "#282a36"; 
+
+
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_gray5 },
+	[SchemeTitle]  = { col_title1, col_title2,  col_title3  },
+
 };
 
+
 /* tagging */
-static const char *tags[] = { "", "", "", "拾", "", "羽"};
+static const char *tags[] = { "", "", "", "拾", "", "羽"};
+
+static const char *tagsel[][2] = {
+	{ "#ffffff", "#6600ff" },
+	{ "#ebf875", "#00fdff" },
+	{ "#000000", "#08ff08" },
+	{ "#000000", "#0ff0fc" },
+	{ "#120052", "#dfff11" },
+	{ "#ffffff", "#66ff00" },
+	{ "#ffffff", "#6600ff" },
+	{ "#000000", "#55ffff" },
+	{ "#ffffff", "#04d9ff" },
+};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -71,7 +93,7 @@ static const Layout layouts[] = {
 	// { "[卵]",      monocle },
 
 
-	{ "[]=",      tile },    /* first entry is default */
+	{ "[]",      tile },    /* first entry is default */
 	{ "[M]",      monocle },
 	{ "[@]",      spiral },
 	{ "[\\]",     dwindle },

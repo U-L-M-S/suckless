@@ -97,53 +97,35 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
   /* 8 bright colors */                       
-  [0] = "#002cff", /* 1 ZSH-Suggestion  */  // 1
-  [1] = "#cc6c20", /* 2 */ // 1
-  [2] = "#42c28f", /* 3 */ // 1
-  [3] = "#ffff00", /* 4 */ // 1
-  [4] = "#5e3ca1", /* 5 */ // 1
-  [5] = "#1e90ff", /* 6 */ // 1
-  [6] = "#483d8b", /* 7 */ // 1
-  [7] = "#808080", /* 8 */ // 
+  [0] = "#000000", /* black   */
+  [1] = "#ff5555", /* red     */
+  [2] = "#50fa7b", /* green   */
+  [3] = "#f1fa8c", /* yellow  */
+  [4] = "#bd93f9", /* blue    */
+  [5] = "#ff79c6", /* magenta */
+  [6] = "#8be9fd", /* cyan    */
+  [7] = "#bbbbbb", /* white   */
 
-  // /* 8 normal colors */
-  // [0] = "#4B4A54", /* black */
-  // [1] = "#B3B2BD", /* red     */
-  // [2] = "#595862", /* green   */
-  // [3] = "#979FFF", /* yellow <- */
-  // [4] = "#8186F1", /* blue  <-  */
-  // [5] = "#454463", /* magenta */
-  // [6] = "#CFCDD9", /* cyan    */
-  // [7] = "#597180", /* white   */
-
-              //                               drwxrx-xr-x    - user_name 20 Feb 23:18   Downloads
-              //                               [5423-7]           [4]       [    7    ]   [  5    ]    
-              //
-              //                               .rw-r--r-- 105k silcniu 20 Feb  5:11 2022-02-20-051132_1266x333_scrot.png
-              //                               [.42-7-7]  [3 8]  [4]   [     7    ] [                6                  ]
-              //                               .rwx-rwx-rwx    0 silcniu 21 Feb 20:44 test.txt
-              //                               [.423-798-798] [3]  [4]   [    7     ] [  3  ]
-              // 
-                                              
-  /* 8 bright colors */                       
-  [8]  = "#808080", /* 1 ZSH-Suggestion  */  // 1
-  [9]  = "#cc6c20", /* 2 */ // 1
-  [10] = "#42c28f", /* 3 */ // 1
-  [11] = "#ffff00", /* 4 */ // 1
-  [12] = "#5e3ca1", /* 5 */ // 1
-  [13] = "#1e90ff", /* 6 */ // 1
-  [14] = "#483d8b", /* 7 */ // 1
-  [15] = "#ff0000", /* 8 */ // 
+  /* 8 bright colors */
+  [8]  = "#44475a", /* black   */
+  [9]  = "#ff5555", /* red     */
+  [10] = "#50fa7b", /* green   */
+  [11] = "#f1fa8c", /* yellow  */
+  [12] = "#bd93f9", /* blue    */
+  [13] = "#ff79c6", /* magenta */
+  [14] = "#8be9fd", /* cyan    */
+  [15] = "#ffffff", /* white   */
 
   /* special colors */
-  [256] = "#07070c", /* Black */
-  [257] = "#FFFFFF", /* White */
+  [256] = "#282a36", /* background */
+  [257] = "#f8f8f2", /* foreground */
 };
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor
  */
+
 
 
 unsigned int defaultfg = 257;
@@ -157,9 +139,9 @@ static unsigned int defaultrcs = 257;
  * will reverse too. Another logic would only make the simple feature too
  * complex.
  */
-static unsigned int defaultitalic = 7;
-static unsigned int defaultunderline = 7;
 
+unsigned int defaultitalic = 7;
+unsigned int defaultunderline = 7;
 
 
 /*

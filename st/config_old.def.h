@@ -96,44 +96,71 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+  /* 8 bright colors */                       
+  [0] = "#002cff", /* 1 ZSH-Suggestion  */  // 1
+  [1] = "#cc6c20", /* 2 */ // 1
+  [2] = "#42c28f", /* 3 */ // 1
+  [3] = "#ffff00", /* 4 */ // 1
+  [4] = "#5e3ca1", /* 5 */ // 1
+  [5] = "#1e90ff", /* 6 */ // 1
+  [6] = "#483d8b", /* 7 */ // 1
+  [7] = "#808080", /* 8 */ // 
 
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+  // /* 8 normal colors */
+  // [0] = "#4B4A54", /* black */
+  // [1] = "#B3B2BD", /* red     */
+  // [2] = "#595862", /* green   */
+  // [3] = "#979FFF", /* yellow <- */
+  // [4] = "#8186F1", /* blue  <-  */
+  // [5] = "#454463", /* magenta */
+  // [6] = "#CFCDD9", /* cyan    */
+  // [7] = "#597180", /* white   */
 
-	[255] = 0,
+              //                               drwxrx-xr-x    - user_name 20 Feb 23:18   Downloads
+              //                               [5423-7]           [4]       [    7    ]   [  5    ]    
+              //
+              //                               .rw-r--r-- 105k silcniu 20 Feb  5:11 2022-02-20-051132_1266x333_scrot.png
+              //                               [.42-7-7]  [3 8]  [4]   [     7    ] [                6                  ]
+              //                               .rwx-rwx-rwx    0 silcniu 21 Feb 20:44 test.txt
+              //                               [.423-798-798] [3]  [4]   [    7     ] [  3  ]
+              // 
+                                              
+  /* 8 bright colors */                       
+  [8]  = "#808080", /* 1 ZSH-Suggestion  */  // 1
+  [9]  = "#cc6c20", /* 2 */ // 1
+  [10] = "#42c28f", /* 3 */ // 1
+  [11] = "#ffff00", /* 4 */ // 1
+  [12] = "#5e3ca1", /* 5 */ // 1
+  [13] = "#1e90ff", /* 6 */ // 1
+  [14] = "#483d8b", /* 7 */ // 1
+  [15] = "#ff0000", /* 8 */ // 
 
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+  /* special colors */
+  [256] = "#07070c", /* Black */
+  [257] = "#FFFFFF", /* White */
 };
-
 
 /*
  * Default colors (colorname index)
- * foreground, background, cursor, reverse cursor
+ * foreground, background, cursor
  */
-unsigned int defaultfg = 258;
-unsigned int defaultbg = 259;
-unsigned int defaultcs = 256;
+
+
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
+unsigned int defaultcs = 257;
 static unsigned int defaultrcs = 257;
+
+
+/*
+ * Colors used, when the specific fg == defaultfg. So in reverse mode this
+ * will reverse too. Another logic would only make the simple feature too
+ * complex.
+ */
+static unsigned int defaultitalic = 7;
+static unsigned int defaultunderline = 7;
+
+
 
 /*
  * Default shape of cursor
@@ -142,7 +169,7 @@ static unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 6;
 
 /*
  * Default columns and rows numbers
@@ -177,6 +204,8 @@ static uint forcemousemod = ShiftMask;
  */
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
+  { XK_ANY_MOD,           Button4, kscrollup,      {.i = 1},		0, /* !alt */ -1 },
+  { XK_ANY_MOD,           Button5, kscrolldown,    {.i = 1},		0, /* !alt */ -1 },
 	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
 	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
@@ -202,6 +231,10 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
 
 /*

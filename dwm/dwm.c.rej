@@ -1,14 +1,17 @@
 --- dwm.c
 +++ dwm.c
-@@ -237,7 +239,11 @@ static int xerrorstart(Display *dpy, XErrorEvent *ee);
- static void zoom(const Arg *arg);
- 
- /* variables */
-+static const char autostartblocksh[] = "autostart_blocking.sh";
-+static const char autostartsh[] = "autostart.sh";
- static const char broken[] = "broken";
-+static const char dwmdir[] = "dwm";
-+static const char localshare[] = ".local/share";
- static char stext[256];
- static int screen;
- static int sw, sh;           /* X display screen geometry width, height */
+@@ -1569,9 +1570,14 @@ setup(void)
+ 	cursor[CurResize] = drw_cur_create(drw, XC_sizing);
+ 	cursor[CurMove] = drw_cur_create(drw, XC_fleur);
+ 	/* init appearance */
++	if (LENGTH(tags) > LENGTH(tagsel))
++		die("too few color schemes for the tags");
+ 	scheme = ecalloc(LENGTH(colors), sizeof(Clr *));
+ 	for (i = 0; i < LENGTH(colors); i++)
+ 		scheme[i] = drw_scm_create(drw, colors[i], 3);
++	tagscheme = ecalloc(LENGTH(tagsel), sizeof(Clr *));
++	for (i = 0; i < LENGTH(tagsel); i++)
++		tagscheme[i] = drw_scm_create(drw, tagsel[i], 2);
+ 	/* init bars */
+ 	updatebars();
+ 	updatestatus();
