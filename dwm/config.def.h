@@ -53,7 +53,7 @@ static const char *tags[] = { "", "", "", "拾", "", "羽"};
 
 static const char *tagsel[][2] = {
 	{ "#ffffff", "#6600ff" },
-	{ "#ebf875", "#00fdff" },
+	{ "#ebf875", "#2c2972" },
 	{ "#000000", "#08ff08" },
 	{ "#000000", "#0ff0fc" },
 	{ "#120052", "#dfff11" },
