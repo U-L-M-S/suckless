@@ -1,0 +1,23 @@
+--- dwm.c
++++ dwm.c
+@@ -93,6 +93,8 @@ struct Client {
+ 	int bw, oldbw;
+ 	unsigned int tags;
+ 	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen;
++	int floatborderpx;
++	int hasfloatbw;
+ 	Client *next;
+ 	Client *snext;
+ 	Monitor *mon;
+@@ -1294,7 +1308,10 @@ resizeclient(Client *c, int x, int y, int w, int h)
+ 	c->oldy = c->y; c->y = wc.y = y;
+ 	c->oldw = c->w; c->w = wc.width = w;
+ 	c->oldh = c->h; c->h = wc.height = h;
+-	wc.border_width = c->bw;
++	if (c->isfloating && c->hasfloatbw && !c->isfullscreen)
++		wc.border_width = c->floatborderpx;
++	else
++		wc.border_width = c->bw;
+ 	XConfigureWindow(dpy, c->win, CWX|CWY|CWWidth|CWHeight|CWBorderWidth, &wc);
+ 	configure(c);
+ 	XSync(dpy, False);
