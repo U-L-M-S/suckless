@@ -29,11 +29,11 @@ static const unsigned int gappx     = 6;
 
 static const char col_gray1[]       = "#282a36"; // Numbers Background
 static const char col_gray2[]       = "#644475"; // DK (it doesn't show up)
-static const char col_gray3[]       = "#bf93f9"; // Letter
+static const char col_gray3[]       = "#39ff14"; // Letter 
 static const char col_gray4[]       = "#282a36"; // Title Color
 static const char col_gray5[]       = "#282a36";
 // static const char col_gray5[]       = "#a272a4";
-static const char col_cyan[]        = "#bf93f9"; // Title Background
+static const char col_cyan[]        = "#39ff14"; // Title Background
 static const char col_title1[]        = "#282a36";  
 static const char col_title2[]        = "#282a36";
 static const char col_title3[]        = "#282a36"; 
@@ -93,9 +93,9 @@ static const Layout layouts[] = {
 	// { "[卵]",      monocle },
 
 
-	{ "[]",      tile },    /* first entry is default */
-	{ "[M]",      monocle },
-	{ "[@]",      spiral },
+	{ "",      tile },    /* first entry is default */
+	{ "M",      monocle },
+	{ "@",      spiral },
 	{ "[\\]",     dwindle },
 	{ "H[]",      deck },
 	{ "TTT",      bstack },
