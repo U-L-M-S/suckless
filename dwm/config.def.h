@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 4;        /* border pixel of windows */
 
 static const unsigned int snap      = 8;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
@@ -94,20 +94,20 @@ static const Layout layouts[] = {
 	// { "[卵]",      monocle },
 
 
-	{ "",      tile },    /* first entry is default */
-	{ "M",      monocle },
-	{ "@",      spiral },
-	{ "[\\]",     dwindle },
-	{ "H[]",      deck },
-	{ "TTT",      bstack },
-	{ "===",      bstackhoriz },
-	{ "HHH",      grid },
-	{ "###",      nrowgrid },
-	{ "---",      horizgrid },
-	{ ":::",      gaplessgrid },
-	{ "|M|",      centeredmaster },
-	{ ">M>",      centeredfloatingmaster },
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "   ",      tile },    /* first entry is default */
+	{ "   M",      monocle },
+	{ "   @",      spiral },
+	{ "   [\\]",     dwindle },
+	{ "   H[]",      deck },
+	{ "   TTT",      bstack },
+	{ "   ===",      bstackhoriz },
+	{ "   HHH",      grid },
+	{ "   ###",      nrowgrid },
+	{ "   ---",      horizgrid },
+	{ "   :::",      gaplessgrid },
+	{ "   |M|",      centeredmaster },
+	{ "   >M>",      centeredfloatingmaster },
+	{ "   ><>",      NULL },    /* no layout function means floating behavior */
 	{ NULL,       NULL },
 };
 
