@@ -67,15 +67,17 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function format          argument */
      
-	{ uptime,          "^c#ffffff^  ^c#559294^ 祥 %s ^c#ffffff^ | ",         NULL           }, 
+	{ uptime,          "          ^c#ffffff^  ^c#559294^ 祥 %s ^c#8be9fd^ | ",         NULL           }, 
 	
-	{ cpu_perc,	       "^c#DB3EB1^  %s%% ^c#ffffff^ | ",         NULL           },
+	{ cpu_perc,	       "^c#DB3EB1^  %s%% ^c#8be9fd^ | ",         NULL           },
 	
-	{ ram_perc,        "^c#7b7a9c^  %s%% ^c#ffffff^ | ",        NULL           },
+	{ ram_perc,        "^c#7b7a9c^  %s%% ^c#8be9fd^ | ",        NULL           },
 	
-	{ disk_perc,       "^c#A7B7DE^  %s%% ^c#ffffff^ | ",         "/"            },
+	{ disk_perc,       "^c#A7B7DE^  %s%% ^c#8be9fd^ | ",         "/"            },
 	
-	{ datetime,        "^c#C6980B^  %s ",         "[%U] %a %d %b %Y - %H:%M ^c#ffffff^                                             "},
+	{ run_command,     "^c#E0E722^ %s ^c#8be9fd^ | ",        "~/.local/bin/euro_real" },
+
+	{ datetime,        "^c#C5B4E3^  %s ",         "[%U] %a %d %b %Y - %H:%M ^c#ffffff^                            "},
 };
 
 	//
